@@ -5,5 +5,5 @@
 3. clicking a task card opens the details of the task
 4. adding a check button on each mini task card to move it to next column
 5. ~~adding manual save to json file and reload from that json file~~
-6. cleaning up code to multiple files
+6. ~~cleaning up code to multiple files~~  <sub>did I really need that??</sub>
 7. 
