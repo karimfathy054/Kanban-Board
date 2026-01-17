@@ -147,3 +147,22 @@ h1 {
 .icon-delete-col:hover {
     opacity: 1;
 }
+
+
+.edit-col-btn {
+  cursor: pointer;           
+  color: #888;               
+  font-size: 1.4rem;         
+  padding-left: 4px ;          
+  transition: all 0.2s ease;  
+    opacity: 0;                 
+}
+
+.list-header:hover .edit-col-btn {
+  opacity: 1;
+}
+
+
+.edit-col-btn:hover {
+    color: rgb(52, 52, 179);
+}

@@ -91,7 +91,7 @@ export class Column {
     this.#colElem.classList.add("custom-scroll");
     this.#colElem.dataset.colId = this.id;
     this.#colElem.innerHTML = `
-            <div class="list-header"><h2>${this.title}</h2></div>
+            <div class="list-header"><h2>${this.title} <span class="edit-col-btn" style="cursor:pointer">✎𓂃</span></h2></div>
             <div class="list-items"></div>
             <div class="list-footer">
                 <span class="delete-col-btn" style="cursor:pointer">🗑️</span>
