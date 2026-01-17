@@ -9,7 +9,6 @@ export class Board {
     this.#boardElem = boardDOMElem;
     Object.seal(this);
   }
-
   static fromJson(json, boardDOMElem) {
     const board = new Board(boardDOMElem);
     board.id = json.id;
@@ -28,7 +27,9 @@ export class Board {
   clearBoard() {
     this.columns = [];
     this.#boardElem.innerHTML = "";
-    saveData(this);
+    this.addColumn("To do");
+    this.addColumn("In Progress");
+    this.addColumn("Done");
   }
   removeColumn(id, colElem) {
     this.columns = this.columns.filter((column) => column.id !== id);
