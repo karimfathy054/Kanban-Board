@@ -91,7 +91,7 @@ export class Column {
     this.#colElem.classList.add("custom-scroll");
     this.#colElem.dataset.colId = this.id;
     this.#colElem.innerHTML = `
-            <div class="list-header"><h2>${this.title} <span class="edit-col-btn" style="cursor:pointer">✎𓂃</span></h2></div>
+            <div class="list-header"><h2><span class="title-text">${this.title}</span> <span class="edit-col-btn" style="cursor:pointer">✎𓂃</span></h2></div>
             <div class="list-items"></div>
             <div class="list-footer">
                 <span class="delete-col-btn" style="cursor:pointer">🗑️</span>
@@ -99,6 +99,17 @@ export class Column {
             </div>
         `;
 
+    this.#colElem
+      .querySelector(".edit-col-btn")
+      .addEventListener("click", (e) => {
+        e.stopPropagation();
+        const newTitle = prompt("Enter new column name:", this.title);
+        if (newTitle) {
+          this.title = newTitle;
+          this.#colElem.querySelector(".title-text").innerText = newTitle;
+          saveData(this.#board);
+        }
+      });
     this.#colElem
       .querySelector(".add-task-btn")
       .addEventListener("click", () => {
@@ -126,6 +137,11 @@ export class Column {
     return this.#colElem;
   }
   saveData() {
+    saveData(this.#board);
+  }
+
+  editName(title) {
+    this.title = title;
     saveData(this.#board);
   }
 
